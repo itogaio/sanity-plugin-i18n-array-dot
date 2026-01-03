@@ -1,5 +1,10 @@
 import {PluginConfig} from './types'
 
+export const TYPE_NAME_FORMAT = {
+  prefix: 'i18nArray.',
+  suffix: '.value',
+}
+
 export const MAX_COLUMNS = {
   codeOnly: 5,
   titleOnly: 4,

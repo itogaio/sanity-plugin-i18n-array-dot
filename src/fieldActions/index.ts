@@ -11,6 +11,7 @@ import {
 import {useDocumentPane} from 'sanity/structure'
 
 import {useInternationalizedArrayContext} from '../components/InternationalizedArrayContext'
+import {TYPE_NAME_FORMAT} from '../constants'
 import type {Language, Value} from '../types'
 import {checkAllLanguagesArePresent} from '../utils/checkAllLanguagesArePresent'
 import {createAddAllTitle} from '../utils/createAddAllTitle'
@@ -105,11 +106,11 @@ const AddMissingTranslationsFieldAction: (
 }
 
 export const internationalizedArrayFieldAction = defineDocumentFieldAction({
-  name: 'internationalizedArray',
+  name: TYPE_NAME_FORMAT.prefix,
   useAction(fieldActionProps) {
     const isInternationalizedArrayField =
       fieldActionProps?.schemaType?.type?.name.startsWith(
-        'internationalizedArray'
+        TYPE_NAME_FORMAT.prefix
       )
     const {languages, filteredLanguages} = useInternationalizedArrayContext()
 

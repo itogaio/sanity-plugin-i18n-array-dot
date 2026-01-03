@@ -1,5 +1,7 @@
 import {SanityDocument} from 'sanity'
 
+import {TYPE_NAME_FORMAT} from '../constants'
+
 export interface DocumentsToTranslate {
   path: (string | number)[]
   pathString: string
@@ -22,7 +24,8 @@ export const getDocumentsToTranslate = (
       if (typeof item === 'object') {
         const type = item?._type as string | undefined
         return (
-          type?.startsWith('internationalizedArray') && type?.endsWith('Value')
+          type?.startsWith(TYPE_NAME_FORMAT.prefix) &&
+          type?.endsWith(TYPE_NAME_FORMAT.suffix)
         )
       }
       return false

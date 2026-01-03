@@ -2,6 +2,7 @@ import type {ReactNode} from 'react'
 import {useMemo} from 'react'
 import {type FieldProps} from 'sanity'
 
+import {TYPE_NAME_FORMAT} from '../constants'
 import {useInternationalizedArrayContext} from './InternationalizedArrayContext'
 
 export default function InternationalizedField(props: FieldProps): ReactNode {
@@ -26,7 +27,7 @@ export default function InternationalizedField(props: FieldProps): ReactNode {
     }
   }, [props, languages])
 
-  if (!customProps.schemaType.name.startsWith('internationalizedArray')) {
+  if (!customProps.schemaType.name.startsWith(TYPE_NAME_FORMAT.prefix)) {
     return customProps.renderDefault(customProps)
   }
 

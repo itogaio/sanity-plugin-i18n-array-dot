@@ -1,3 +1,3 @@
 export {clear} from './cache'
-export {internationalizedArray} from './plugin'
+export {i18nArrayDot} from './plugin'
 export * from './types'

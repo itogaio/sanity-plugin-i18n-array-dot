@@ -1,18 +1,18 @@
 {
-  "name": "sanity-plugin-internationalized-array",
-  "version": "3.2.2",
+  "name": "sanity-plugin-i18n-array-dot",
+  "version": "3.2.2-0",
   "description": "Store localized fields in an array to save on attributes",
   "keywords": [
     "sanity",
     "sanity-plugin"
   ],
-  "homepage": "https://github.com/sanity-io/sanity-plugin-internationalized-array#readme",
+  "homepage": "https://github.com/itogaio/sanity-plugin-i18n-array-dot#readme",
   "bugs": {
-    "url": "https://github.com/sanity-io/sanity-plugin-internationalized-array/issues"
+    "url": "https://github.com/itogaio/sanity-plugin-i18n-array-dot/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:sanity-io/sanity-plugin-internationalized-array.git"
+    "url": "git@github.com:itogaio/sanity-plugin-i18n-array-dot.git"
   },
   "license": "MIT",
   "author": "Sanity.io <hello@sanity.io>",

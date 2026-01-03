@@ -3,14 +3,14 @@ import {definePlugin, isObjectInputProps} from 'sanity'
 import {InternationalizedArrayProvider} from './components/InternationalizedArrayContext'
 import InternationalizedField from './components/InternationalizedField'
 import Preload from './components/Preload'
-import {CONFIG_DEFAULT} from './constants'
+import {CONFIG_DEFAULT, TYPE_NAME_FORMAT} from './constants'
 import {internationalizedArrayFieldAction} from './fieldActions'
 import array from './schema/array'
 import object from './schema/object'
 import {PluginConfig} from './types'
 import {flattenSchemaType} from './utils/flattenSchemaType'
 
-export const internationalizedArray = definePlugin<PluginConfig>((config) => {
+export const i18nArrayDot = definePlugin<PluginConfig>((config) => {
   const pluginConfig = {...CONFIG_DEFAULT, ...config}
   const {
     apiVersion = '2025-10-15',
@@ -22,7 +22,7 @@ export const internationalizedArray = definePlugin<PluginConfig>((config) => {
   } = pluginConfig
 
   return {
-    name: 'sanity-plugin-internationalized-array',
+    name: 'sanity-plugin-i18n-array-dot',
     // Preload languages for use throughout the Studio
     studio: Array.isArray(languages)
       ? undefined
@@ -58,7 +58,7 @@ export const internationalizedArray = definePlugin<PluginConfig>((config) => {
             (field) => field.type.name
           )
           const hasInternationalizedArray = flatFieldTypeNames.some((name) =>
-            name.startsWith('internationalizedArray')
+            name.startsWith(TYPE_NAME_FORMAT.prefix)
           )
 
           if (!hasInternationalizedArray) {

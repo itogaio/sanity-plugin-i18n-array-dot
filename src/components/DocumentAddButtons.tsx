@@ -11,6 +11,7 @@ import {
 } from 'sanity'
 import {useDocumentPane} from 'sanity/structure'
 
+import {TYPE_NAME_FORMAT} from '../constants'
 import {
   DocumentsToTranslate,
   getDocumentsToTranslate,
@@ -40,8 +41,11 @@ export default function DocumentAddButtons(
       if (!typeName) return undefined
 
       // Extract the base type name from internationalized array type
-      // e.g., "internationalizedArrayBodyValue" -> "body"
-      const match = typeName.match(/^internationalizedArray(.+)Value$/)
+      // e.g., "i18nArray.body.value" -> "body"
+      const regex = new RegExp(
+        `^${TYPE_NAME_FORMAT.prefix}(.+)${TYPE_NAME_FORMAT.suffix}$`
+      )
+      const match = typeName.match(regex)
       if (!match) return undefined
 
       const baseTypeName = match[1].charAt(0).toLowerCase() + match[1].slice(1)

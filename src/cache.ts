@@ -4,7 +4,7 @@ import * as suspend from 'suspend-react'
 
 import type {Language, LanguageCallback} from './types'
 
-export const namespace = 'sanity-plugin-internationalized-array'
+export const namespace = 'sanity-plugin-i18n-array-dot'
 
 export const version = 'v1'
 
